@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MyFace - Secure Social Network</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="asset/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="asset/style/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="header clearfix">
+        <h3 class="text-muted pull-left">
+            <a href="/"><img src="asset/image/myface-logo-hero.png" height="50" /></a>
+        </h3>
+        <p class="pull-right">
+            {% if user_email is defined %}
+            Hello, {{ user_email }} &nbsp;
+            <a href="/logout">Log Out</a>
+            {% endif %}
+        </p>
+    </div>
+
+    {% block body %}
+
+    {% endblock %}
+
+    <div class="footer">
+        <p class="pull-left">&copy; MyFace Corporation 2014</p>
+        <p class="pull-right">
+            {% if user_id is defined %}
+            <a href="/close/{{ user_id }}">Close Account</a>
+            {% endif %}
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

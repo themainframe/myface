@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <form class="form-signin" method="post" role="form">
+        <h2 class="form-signin-heading">Sign Up Today</h2><br>
+        <br>
+
+        Enter your email address:<br><br>
+        <input name="email" type="email" class="form-control" placeholder="Email address" required autofocus>
+        <br><br>
+        Choose a password:<br><br>
+        <input name="password" type="password" class="form-control" placeholder="Password" required>
+        <br>
+        <br>
+
+        <button class="btn btn-lg btn-success btn-block" type="submit">Sign Up</button>
+    </form>
+
+    <br><br>
+
+
+{% endblock %}

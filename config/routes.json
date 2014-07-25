@@ -3,15 +3,71 @@
 
         "home": {
             "url": "/",
-            "controller": "controller.helloworld",
-            "action": "sayHello",
+            "controller": "controller.static_pages",
+            "action": "home",
             "methods": ["GET"]
         },
 
-        "show_your_name": {
-            "url": "/{yourName}",
-            "controller": "controller.helloworld",
-            "action": "sayYourName",
+        "login": {
+            "url": "/login",
+            "controller": "controller.auth",
+            "action": "login",
+            "methods": ["GET"]
+        },
+
+        "do_login": {
+            "url": "/login",
+            "controller": "controller.auth",
+            "action": "doLogin",
+            "methods": ["POST"]
+        },
+
+        "logout": {
+            "url": "/logout",
+            "controller": "controller.auth",
+            "action": "logout",
+            "methods": ["GET"]
+        },
+
+        "signup": {
+            "url": "/signup",
+            "controller": "controller.auth",
+            "action": "signup",
+            "methods": ["GET"]
+        },
+
+        "do_signup": {
+            "url": "/signup",
+            "controller": "controller.auth",
+            "action": "doSignup",
+            "methods": ["POST"]
+        },
+
+        "close_account": {
+            "url": "/close/{id}",
+            "controller": "controller.auth",
+            "action": "closeAccount",
+            "methods": ["GET"]
+        },
+
+        "feed": {
+            "url": "/feed",
+            "controller": "controller.feed",
+            "action": "feed",
+            "methods": ["GET"]
+        },
+
+        "post_feed": {
+            "url": "/feed",
+            "controller": "controller.feed",
+            "action": "post",
+            "methods": ["POST"]
+        },
+
+        "delete": {
+            "url": "/feed/delete/{post}",
+            "controller": "controller.feed",
+            "action": "delete",
             "methods": ["GET"]
         }
 

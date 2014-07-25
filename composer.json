@@ -6,7 +6,8 @@
     },
     "require": {
         "themainframe/veto": "dev-master",
-        "twig/twig" : "1.*"
+        "twig/twig" : "1.*",
+        "zendframework/zend-db": "2.3.*@dev"
     },
     "authors": [
         {

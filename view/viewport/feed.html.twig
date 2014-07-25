@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <form method="post">
+
+    <div class="well">
+        <div class="row">
+            <div class="col-md-10">
+                <input type="text" name="content" style="font-size: 20px; width: 100%" placeholder=" What are you doing today?" />
+            </div>
+            <div class="col-md-2">
+                <input type="submit" class="btn btn-success" value="Post!" style="width: 100%; font-size: 15px; font-weight: bold">
+                <input type="hidden" value="{{ user_id }}" name="user" />
+            </div>
+        </div>
+    </div>
+
+    </form>
+    <br>
+
+    {% for item in feed %}
+
+        <div class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object" src="http://www.gravatar.com/avatar/{{ hash }}" alt="mugshot">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">{{ item.email }}</h4>
+                {{ item.content|raw }}
+
+                {% if user_id == item.owner_id %}
+                <br><br>
+                <a href="/feed/delete/{{ item.id }}">
+                    <span class="glyphicon glyphicon-remove"></span>
+                    Delete
+                </a>
+                {% endif %}
+
+            </div>
+        </div>
+
+        <br>
+
+    {% else %}
+
+        <p class="text-muted lead text-center">
+            There aren't any posts yet :(
+        </p>
+
+    {% endfor %}
+
+    <br>
+
+{% endblock %}

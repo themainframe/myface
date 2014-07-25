@@ -1,6 +1,8 @@
 <?php
 $loader = require_once '../vendor/autoload.php';
 
+session_start();
+
 // Create the application
 $app = new Veto\App('../config/app.json');
 
